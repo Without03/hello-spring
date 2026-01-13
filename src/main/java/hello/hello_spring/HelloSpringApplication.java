@@ -7,7 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloSpringApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HelloSpringApplication.class, args);
+		SpringApplication.run(HelloSpringApplication.class, args); // HelloSpringApplication 어노테이션 실행
 	}
 
 }
+/*
+git hub test hello world
+ */
+
+// 브랜치 테스트 1
