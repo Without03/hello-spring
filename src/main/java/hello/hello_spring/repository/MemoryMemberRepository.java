@@ -20,6 +20,7 @@ public class MemoryMemberRepository implements MemberRepository{
     public Optional<Member> findById(Long id) {
         return Optional.ofNullable(store.get(id)); // null이어도 감싸서 반환 가능
     }
+    // Optional.of() : null이 아닐때 생성. 만약 null을 저장하려고 하면 npe 발생
 
     /*
     1. store.values()
@@ -63,5 +64,9 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() { // test시 repository clear
+        store.clear();
     }
 }
