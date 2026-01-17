@@ -21,5 +21,4 @@ public class Member {
         this.name = name;
     }
 
-
 }

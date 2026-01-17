@@ -1,13 +1,12 @@
 package hello.hello_spring.repository;
 
 import hello.hello_spring.domain.Member;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
@@ -16,6 +15,7 @@ public class MemoryMemberRepositoryTest {
     public void afterEach(){
         repository.clearStore();
     }
+
     @Test
     public void save() {
         Member member = new Member();
@@ -45,7 +45,7 @@ public class MemoryMemberRepositoryTest {
     }
 
     @Test
-    public void findAll() {
+    public void findAll() { // 이름 중복 이슈, @AfterEach로 각 테스트 수행시 초기화 작업 수행
         Member member1 = new Member();
         member1.setName("spring1");
         repository.save(member1);
